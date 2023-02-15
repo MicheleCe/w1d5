@@ -1,4 +1,5 @@
 import React from "react";
+import SingleFilm from "./SingleFilm";
 
 
 class New extends React.Component {
@@ -26,9 +27,7 @@ class New extends React.Component {
         return <div className="text-white">{this.state.loading ? (<h3>loading...</h3>) : 
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
                 { this.state.films.map(film => (
-                    <div className="col mb-2 px-1" key={film.imdbID}>
-                        <img className="img-fluid" src={film.Poster} alt="movie picture" />
-                    </div>)
+                    <SingleFilm key={film.imdbID} id={film.imdbID} src={film.Poster} title={film.Title}/>)
                 )}
             </div>}
         </div>
